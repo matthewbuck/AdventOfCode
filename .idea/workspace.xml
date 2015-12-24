@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bfb8ae8-260b-4955-975c-e804dabad213" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Day 5/ac41.py" afterPath="$PROJECT_DIR$/Day 5/ac51.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -23,8 +24,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ac41.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Day 5/ac41.py">
+      <file leaf-file-name="ac51.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Day 5/ac51.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.09825327">
               <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
@@ -242,7 +243,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="untitled" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day 5/ac41.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day 5/ac51.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -417,9 +418,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="23" width="1180" height="773" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26694915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26694915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.49661016" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3096591" sideWeight="0.34661016" order="7" side_tool="true" content_ui="tabs" />
@@ -557,7 +558,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Day 5/ac41.py">
+    <entry file="file://$PROJECT_DIR$/Day 5/ac51.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09825327">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
