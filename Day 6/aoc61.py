@@ -2,7 +2,7 @@ m = open('input.txt','r+')
 n = m.read().splitlines()
 
 grid = [[0 for x in range(1000)] for y in range(1000)]
-
+#should probably package into multiple smaller functions
 def light_it(x):
     for line in n:
         if line.startswith('turn on'):
