@@ -1,5 +1,3 @@
-import itertools
-
 m = open('input.txt','r+')
 n = m.read().splitlines()
 
