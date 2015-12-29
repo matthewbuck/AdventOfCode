@@ -1,13 +1,11 @@
 m = open('input.txt','r+')
 n = m.read().splitlines()[:1]
 
-# set up 10^1x10^1 array - debug only fix in real test
-grid = [[0 for x in range(10)] for x in range(10)]
+grid = [[0 for x in range(1000)] for x in range(1000)]
 
 # splitting functions
 def split_instructions(x):
     x = x.split()
-    print x
     return x
 
 def int_split(f,s):
@@ -22,26 +20,37 @@ def int_split(f,s):
 #processing functions
 #ct stands for coordinate tuple
 def turn_on(ct):
-    return 0
+    fx = int(ct[0])
+    fy = int(ct[1])
+    sx = int(ct[2])
+    sy = int(ct[3])
+    xdiff = sx-fx
+    ydiff = sy-fy
+    for lights in range(ydiff):
+        for lights in range(xdiff):
+            grid[fx][fy] = 1
+            fx += 1
+        fy += 1
+
 def turn_off(ct):
     return 0
 def toggle(ct):
     return 0
 
-def home(x):
-    if x[0] == 'turn':
-        if x[1] == 'on':
-            mt = int_split(x[3],x[5])
-
+def light_it(x):
+    #instr = split_instructions(x)
+    if x[0][0] == 'turn':
+        if x[0][1] == 'on':
+            print 'hey'
+            turn_on(int_split(x[0][2],x[0][4]))
         else:
             mt = int_split(x[3],x[5])
     elif x[0] == 'toggle':
         mt = int_split(x[1],x[4])
+    print grid.count(1)
 
-#test github desktop 3
-#test github laptop 3
-
-
-
-print n
-print map(split_instructions,n)
+z = map(split_instructions,n)
+print z[0]
+print z[0][0]
+print z[0][4]
+light_it(z)
