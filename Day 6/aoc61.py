@@ -1,56 +1,57 @@
 m = open('input.txt','r+')
-n = m.read().splitlines()[:1]
+n = m.read().splitlines()
 
-grid = [[0 for x in range(1000)] for x in range(1000)]
-
-# splitting functions
-def split_instructions(x):
-    x = x.split()
-    return x
-
-def int_split(f,s):
-    f = f.split(',')
-    s = s.split(',')
-    fx = f[0]
-    fy = f[1]
-    sx = s[0]
-    sy = s[1]
-    return fx,fy,sx,sy
-
-#processing functions
-#ct stands for coordinate tuple
-def turn_on(ct):
-    fx = int(ct[0])
-    fy = int(ct[1])
-    sx = int(ct[2])
-    sy = int(ct[3])
-    xdiff = sx-fx
-    ydiff = sy-fy
-    for lights in range(ydiff):
-        for lights in range(xdiff):
-            grid[fx][fy] = 1
-            fx += 1
-        fy += 1
-
-def turn_off(ct):
-    return 0
-def toggle(ct):
-    return 0
+grid = [[0 for x in range(1000)] for y in range(1000)]
 
 def light_it(x):
-    #instr = split_instructions(x)
-    if x[0][0] == 'turn':
-        if x[0][1] == 'on':
-            print 'hey'
-            turn_on(int_split(x[0][2],x[0][4]))
-        else:
-            mt = int_split(x[3],x[5])
-    elif x[0] == 'toggle':
-        mt = int_split(x[1],x[4])
-    print grid.count(1)
+    for line in n:
+        if line.startswith('turn on'):
+            firstval = line.split()[2]
+            secondval = line.split()[4]
+            t = (firstval.split(','), secondval.split(','))
+            x1 = int(t[0][0])
+            y1 = int(t[0][1])
+            x2 = int(t[1][0])
+            y2 = int(t[1][1])
+            for xsteps in range(x1,x2+1):
+                for ysteps in range(y1,y2+1):
+                    grid[xsteps][ysteps] = 1
+        elif line.startswith('turn off'):
+            firstval = line.split()[2]
+            secondval = line.split()[4]
+            t = (firstval.split(','), secondval.split(','))
+            x1 = int(t[0][0])
+            y1 = int(t[0][1])
+            x2 = int(t[1][0])
+            y2 = int(t[1][1])
+            for xsteps in range(x1,x2+1):
+                for ysteps in range(y1,y2+1):
+                    grid[xsteps][ysteps] = 0
+        elif line.startswith('toggle'):
+            firstval = line.split()[1]
+            secondval = line.split()[3]
+            t = (firstval.split(','),secondval.split(','))
+            x1 = int(t[0][0])
+            y1 = int(t[0][1])
+            x2 = int(t[1][0])
+            y2 = int(t[1][1])
+            for xsteps in range(x1,x2+1):
+                for ysteps in range(y1,y2+1):
+                    if grid[xsteps][ysteps] == 0:
+                        grid[xsteps][ysteps] = 1
+                    elif grid[xsteps][ysteps] == 1:
+                        grid[xsteps][ysteps] = 0
 
-z = map(split_instructions,n)
-print z[0]
-print z[0][0]
-print z[0][4]
-light_it(z)
+    total = 0
+    error_total = 0
+    error_total_2 = 0
+    for row in grid:
+        total += row.count(1)
+    for row in grid:
+        error_total += row.count(2)
+    for row in grid:
+        error_total_2 += row.count(-1)
+    return '{} lights are turned on. {} lights came back as a two, {} lights came back as -1'.format(total,error_total,error_total_2)
+
+
+print light_it(n)
