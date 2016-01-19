@@ -7,7 +7,7 @@ def break_up_lines(x):
 wiregrid = {}
 
 def find_wire_inputs(x):
-    for line in u:
+    for line in x:
         if line[0].isdigit():
             wiregrid[line[1]] = int(line[0])
         else:
@@ -78,12 +78,16 @@ def process_others(x):
     else:
         process_others(x)
 
-    return 'The signal on a is {}.'.format(wiregrid.get('a'))
+    return 'The signal on \'a\' is {}.'.format(wiregrid.get('a'))
 
+def main():
+    u = break_up_lines(n)
+    find_wire_inputs(u)
+    h = process_others(u)
+    print h
 
-u = break_up_lines(n)
-find_wire_inputs(u)
-h = process_others(u)
+if __name__ == '__main__':
+    main()
 
 
 
